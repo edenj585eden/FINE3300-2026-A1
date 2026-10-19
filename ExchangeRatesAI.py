@@ -1,3 +1,9 @@
+'''
+FINE 3300 - Assignment 1 Part 2 (the AI code)
+Name: Eden Johannes
+Date: October 19, 2026
+
+'''
 import csv
 import os
 
