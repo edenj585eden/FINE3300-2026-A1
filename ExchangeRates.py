@@ -33,11 +33,11 @@ class ExchangeRates:
 
             column_number = column_number + 1
 
-        #This takes the last row (which is the last index, aka it has an index of -1, on the data list) and makes it a list by splitting at the commas. We need this since we're using the latest rates.
+        #This takes the last row (which is the last index, so it has an index of -1, on the data list) and makes it a list by splitting at the commas. We need this since we're using the latest rates.
         latest_row = data[-1].split(",")
 
         #This finds the exchange rate we're looking for by looking in the new list we made of the last row for the index of the rate we need (found by the loop earlier).
-        exchange_rate = float(latest_row[rate_column]) #We need to add float since everything is being read as a string
+        exchange_rate = float(latest_row[rate_column]) #We need to add float since everything is currently being read as a string
 
         return exchange_rate #Return the exchange rate we found to use in the convert method.
 
