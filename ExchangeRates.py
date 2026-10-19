@@ -7,7 +7,7 @@ class ExchangeRates:
     def read_exchange_rate(self):
         #Opening and reading the excel file
         file = open(self.filename, "r")
-        data = file.read().split("\n") #Each line return (aka each row) is seperated by \n, so splitting by \n makes each row a new list
+        data = file.read().split("\n") #Each line return (aka each row) is separated by \n, so splitting by \n makes each row a new list
         file.close() #Close the file after reading!
 
         #Removing the empty item that can appear at the end when splitting by "\n".
@@ -29,8 +29,8 @@ class ExchangeRates:
         #This takes the last row (which is the last index, aka it has an index of -1, on the data list) and makes it a list by splitting at the commas. We need this since we're using the latest rates.
         latest_row = data[-1].split(",")
 
-        #This finds the exchange rate were looking for by looking in the new list we made of the last row for the index of the rate we need (found by the loop earlier).
-        exchange_rate = float(latest_row[rate_column]) #We need to add float since it everything is being read as a string
+        #This finds the exchange rate we're looking for by looking in the new list we made of the last row for the index of the rate we need (found by the loop earlier).
+        exchange_rate = float(latest_row[rate_column]) #We need to add float since everything is being read as a string
 
         return exchange_rate #Return the exchange rate we found to use in the convert method.
 
@@ -41,13 +41,13 @@ class ExchangeRates:
             return amount #If both currencies are the same, it returns the amount inputted
 
         elif fromCurrency == "CAD" and toCurrency == "USD":
-            return amount / self.exchange_rate #Exchanging from CAD to USD, divides CAD by exchange rate to get USD
+            return amount / self.exchange_rate #Exchanging from CAD to USD, divides CAD by the exchange rate to get USD
 
         elif fromCurrency == "USD" and toCurrency == "CAD":
-            return amount * self.exchange_rate #Exchanging from USD to CAD, multiplys USD by exchange rate to get CAD
+            return amount * self.exchange_rate #Exchanging from USD to CAD, multiplies USD by the exchange rate to get CAD
 
 
-# Python 4: Creating an object from the class
+#Creates an object from the class and loads the exchange rate from the CSV file with the rates.
 exchange = ExchangeRates("BankOfCanadaExchangeRate.2026.csv")
 
 #Prompt the user for the amount and currencies
