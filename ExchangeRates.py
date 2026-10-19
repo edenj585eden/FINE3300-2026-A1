@@ -1,6 +1,7 @@
 '''
 FINE 3300 - Assignment 1 Part 1
 Name: Eden Johannes
+Student number: 221214440
 Date: October 19, 2026
 
 '''
@@ -10,8 +11,8 @@ class ExchangeRates:
         self.filename = filename
         self.exchange_rate = self.read_exchange_rate()
 
-    def read_exchange_rate(self):
-        #Opening and reading the excel file
+    def read_exchange_rate(self): #This method reads the exchange rate file and finds and returns the USD to CAD exchange rate. (I used the textbook to help with opening, reading, and finding the USD/CAD exchange rate)
+        #Opening and reading the excel file 
         file = open(self.filename, "r")
         data = file.read().split("\n") #Each line return (aka each row) is separated by \n, so splitting by \n makes each row a new list
         file.close() #Close the file after reading!
@@ -58,11 +59,11 @@ exchange = ExchangeRates("BankOfCanadaExchangeRate.2026.csv")
 
 #Prompt the user for the amount and currencies
 amount = float(input("Enter the amount: "))
-from_currency = input("What is the currency you want to convert from (USD or CAD): ").upper()
+from_currency = input("What is the currency you want to convert from (USD or CAD): ").upper() #makes whatever the user enters into uppercase letters (I remembered this from a previous python class).
 to_currency = input("What is the currency you want to convert to (USD or CAD): ").upper()
 
 #Calls the convert method
 result = exchange.convert(amount, from_currency, to_currency)
 
-#Formats the output using .format() based on what the user enters and what the convert method calculates.
-print("${:.2f} {} = ${:.2f} {}".format(amount, from_currency, result, to_currency))
+#Formats the output using .format() based on what the user enters and what the convert method calculates. 
+print("${:.2f} {} = ${:.2f} {}".format(amount, from_currency, result, to_currency)) #Also makes sure to round to 2 decimal places (I remembered this from previous python class).

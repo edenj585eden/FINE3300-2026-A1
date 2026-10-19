@@ -1,6 +1,7 @@
 '''
 FINE 3300 - Assignment 1 Part 2 (the AI code)
 Name: Eden Johannes
+Student number: 221214440
 Date: October 19, 2026
 
 '''
